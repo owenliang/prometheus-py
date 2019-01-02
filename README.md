@@ -15,6 +15,6 @@ prometheus python client demo
 关于向量运算operator：
 1，只有instant-vector之间可以加减乘除运算，这和sum,avg的原理一样，是用于不同name or label的instant-vector之间的运算
 2，vector之间做运算，分成2个步骤：先匹配，后运算。
-两个name不同的instant-vector做运算，必须先经过on/ignoring实现label的统一，这样就完成了"匹配"。
+两个name不同label不同的instant-vector做运算，必须先经过on/ignoring实现label的统一，这样就完成了"匹配"。
 运算则需要考虑，左侧vector和右侧vector，在记录数量上谁多谁少，如果左侧多那么就要group_left(相当于left join, n:1关系)，否则就用group_right(相当于right join, 1:n关系)，如果你不指定，那么应该会因为无法1:1 join而报错。
 ```
