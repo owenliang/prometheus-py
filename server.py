@@ -22,7 +22,7 @@ while True:
     g.set(random.random())
 
     # histogram: 任意值, 会给符合条件的bucket增加1次计数
-    h.observe(random.randint(-10, 10))
+    h.observe(random.randint(-5, 5))
 
     # summary：任意值, python client不支持summary的百分位统计, 其他语言的client也许支持, 但一般不建议用, 性能和场景都有局限
     s.labels('a', 'b').observe(17)
